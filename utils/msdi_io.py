@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-msdi_path = '/home/mrb8/Bureau/M2/SAM/projet_v2/datas/msdi'
+msdi_path = '../data/msdi'
 # Change this to configure your path to MSDI dataset
 
 def get_msdi_dataframe(msdi_path=msdi_path):
