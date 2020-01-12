@@ -21,3 +21,5 @@ def resize(img,output_shape):#used for ResNet
         return img
    # img = cv2.resize(img, dsize=output_shape, interpolation=cv2.INTER_CUBIC)
     return img
+
+

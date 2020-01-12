@@ -8,11 +8,13 @@ class batchLoader():
 		self.max_size = max_size
 		self.msdi = get_msdi_dataframe(msdi_path)
 
+
 	def load(self,batch_nb):
 		batch_size = min(self.i+self.batch_size,self.max_size)
 
 		X = []
 		y = []
+        #on charge directement le batch
 		entry_idx=np.arange(batch_nb*batch_size,batch_size*(1+batch_nb))
 		one_entry = self.msdi.loc[entry_idx]
 		#print(one_entry)
@@ -60,7 +62,8 @@ if __name__ == '__main__':
 	bl = batchLoader(100,path_msdi=msdi_path)
 	for i in range(10):
 		X,y=bl.load(i)
-		print(X[1])
+		print(X.shape,len(y))
+		#print(X[1])
 """	print('Labels:', get_label_list())
 	bl = batchLoader(100,path_msdi=msdi_path)
 	for i in range(10):
