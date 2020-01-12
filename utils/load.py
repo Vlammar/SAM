@@ -9,7 +9,7 @@ class batchLoader():
 		self.msdi = get_msdi_dataframe(msdi_path)
 
 
-	def load(self,batch_nb):
+	def load(self,batch_nb,img_size):
 		batch_size = min(self.i+self.batch_size,self.max_size)
 
 		X = []
@@ -27,6 +27,7 @@ class batchLoader():
 				print("donnee trop courte (refusee) de type :",genre)
 				continue
 			img = load_img(row, self.path_msdi)
+
 			deep_features = load_deep_audio_features(row, self.path_msdi)
 			y.append(genre)
 			data = np.hstack([mfcc.reshape(-1),img.reshape(-1),deep_features.reshape(-1)])
